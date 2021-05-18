@@ -1,0 +1,114 @@
+html,body{
+    padding:0;
+    margin:0;
+    background:black;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#scene{
+    position:relative;
+}
+
+#player{
+    position: absolute;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding:0px;
+    border-right:1px solid transparent;
+    border-top:1px solid transparent;
+    transition:0.2s;
+    z-index:2;
+}
+
+#player::after{
+    content:"";
+    flex:1;
+    background:red;
+    height:100%;
+}
+.mobile-controls-wrapper{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+.mobile-controls{
+    display:none;
+    color:red;
+    font-size:1.5rem;
+    z-index:3;
+    position: relative;
+    width:100%;
+    height:100%;
+    text-align:center;
+
+}
+.mobile-controls>*{
+    position: absolute;
+    top:30px;
+    left:46%;
+    transition:0.1s;
+}
+.mobile-controls>*:active{
+    opacity:0.6;
+}
+
+#controls-right{
+    width:0;
+    height:0;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid grey;
+    border-top:  15px solid transparent;
+    transform:translateX(-0.9rem);
+    border-radius:50%;
+}
+#controls-left{
+    width:0;
+    height:0;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid grey;
+    border-top:  15px solid transparent;
+    transform:translateX(1.8rem);
+    border-radius:50%;
+}
+#controls-up{
+    width:0;
+    height:0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid grey;
+    border-radius:50%;
+    transform:translateY(-0.9rem)
+}
+#controls-down{
+    width:0;
+    height:0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid grey;
+    transform:translateY(1.8rem);
+    border-radius:50%;
+}
+
+@media (max-width:900px) {
+    .mobile-controls{
+        display:block;
+    }
+}
+
+@media (hover: none) {
+    .mobile-controls{
+        display:block;
+    }
+}
+
